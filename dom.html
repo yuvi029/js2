@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAI AUR CODE| DOM</title>
+</head>
+<body style="background-color: #645a5a; ">
+     <ul class="launguage">
+        <li> javascript   
+            <p>querySelector() is a method used to find the first element in the DOM that matches a CSS-style selector</p><p> 
+                 appendChild() is a method in JavaScript used to add a new child element or node to an existing parent element in the DOM</p></li>
+     </ul>
+</body>
+<script>
+    //here it is simple using inner html
+
+
+    function addLaunguage(langname) {
+      const child=  document.createElement('li');
+      child.innerHTML =`${langname}`
+      document.querySelector('.launguage').
+      appendChild(child);
+    }
+    addLaunguage('HTML')
+    addLaunguage('CSS')
+    addLaunguage('JavaScript');
+
+
+
+
+//here  it is more optimised as here we are using appendchild and not inner html
+//as it is more useful  
+    function addoptional(langname) {
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.launguage').appendChild(li);
+    }
+    addoptional('React');
+    addoptional('Node.js');
+
+
+
+    //here we are using querySelector to select the first element
+    //editing value 
+   const secondlaug= document.queryselector("li:nth-child(2)")
+   document.createElement('li')
+   newli.textconetnt="mOJO"
+   newli.textcolor="red";
+   secondlaug.replaceWith(newli);
+
+
+   
+   //edit2
+    const firstlaug=document.querySelector("li:nth-child")
+    firstLang.outerHTML="HTML5";
+
+
+
+    //remove
+    const lastLang=document.querySelector("li:last-child");
+    lastLang.remove();
+
+</script>
+</html>
