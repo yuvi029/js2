@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <!-- This is a meta tag used to tell Internet Explorer (IE) how to render the webpage. -->
+    <title>JAVASCRIPT COLOR SWITCHER</title>
+    <style>
+        .button {
+  height: 50px;
+  width: 50px;
+  display: inline-flex;
+  margin: 10px;
+  border: 2px solid #000;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/* Background colors for each button */
+#grey {
+  background-color: grey;
+}
+
+#white {
+  background-color: white;
+}
+
+#red {
+  background-color: red;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" aria-current="page">Home</a>
+        <a href="/date" target="_blank">date</a>
+    </nav>
+    <div class="CANVAS">
+        <h1> Color scheme switcher</h1>
+        <span class="button" id="grey"></span>
+        <span class="button" id="white"></span>
+        <span class="button" id="red"></span>
+        <span class="button" id="yellow"></span>
+    <!-- <span> is an inline container used to group or style small portions of content -->
+    <h2> try clicking on one above the color above
+        <span> to change the background color</span> 
+    </h2>
+    </div>   
+    
+</body>
+</html>
+
+<script>
+    const buttons=document.querySelectorAll('.button')
+    const body=document.querySelector("body")
+
+    buttons.forEach(function(button){
+        console.log(button);
+        //events
+        button.addEventListener('click',function(e){
+         body.style.background=e.target.id;
+             })
+    })
+
+</script>
