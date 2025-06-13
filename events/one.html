@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EVENTS</title>
+</head>
+<body style="background-color: #414141;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="kohli" src="https://in.images.search.yahoo.com/search/images;_ylt=AwrKA3kZW0xoGQIA0a.7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3BpdnM-?p=kohli&fr2=piv-web&type=E210IN885G0&fr=mcafee#id=0&iurl=https%3A%2F%2Fimg1.hscicdn.com%2Fimage%2Fupload%2Ff_auto%2Ct_ds_w_1200%2Flsci%2Fdb%2FPICTURES%2FCMS%2F348100%2F348106.jpg&action=click" alt="king"</li>
+            <li><img width="200px" id="kohli2" src="https://in.images.search.yahoo.com/search/images;_ylt=AwrKA3kZW0xoGQIA0a.7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3BpdnM-?p=kohli&fr2=piv-web&type=E210IN885G0&fr=mcafee#id=0&iurl=https%3A%2F%2Fimg1.hscicdn.com%2Fimage%2Fupload%2Ff_auto%2Ct_ds_w_1200%2Flsci%2Fdb%2FPICTURES%2FCMS%2F348100%2F348106.jpg&action=click"</li>
+            <li><img width="200px" id="kohli3" src="https://in.images.search.yahoo.com/search/images;_ylt=AwrKA3kZW0xoGQIA0a.7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3BpdnM-?p=kohli&fr2=piv-web&type=E210IN885G0&fr=mcafee#id=0&iurl=https%3A%2F%2Fimg1.hscicdn.com%2Fimage%2Fupload%2Ff_auto%2Ct_ds_w_1200%2Flsci%2Fdb%2FPICTURES%2FCMS%2F348100%2F348106.jpg&action=click"</li>
+            <li><img width="200px" id="kohli4" src="https://in.images.search.yahoo.com/search/images;_ylt=AwrKA3kZW0xoGQIA0a.7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3BpdnM-?p=kohli&fr2=piv-web&type=E210IN885G0&fr=mcafee#id=0&iurl=https%3A%2F%2Fimg1.hscicdn.com%2Fimage%2Fupload%2Ff_auto%2Ct_ds_w_1200%2Flsci%2Fdb%2FPICTURES%2FCMS%2F348100%2F348106.jpg&action=click"</li>
+            <li><img width="200px" id="kohli5" src="https://in.images.search.yahoo.com/search/images;_ylt=AwrKA3kZW0xoGQIA0a.7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3BpdnM-?p=kohli&fr2=piv-web&type=E210IN885G0&fr=mcafee#id=0&iurl=https%3A%2F%2Fimg1.hscicdn.com%2Fimage%2Fupload%2Ff_auto%2Ct_ds_w_1200%2Flsci%2Fdb%2FPICTURES%2FCMS%2F348100%2F348106.jpg&action=click"</li>
+            <li><img width="200px" id="kohli6" src="https://in.images.search.yahoo.com/search/images;_ylt=AwrKA3kZW0xoGQIA0a.7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3BpdnM-?p=kohli&fr2=piv-web&type=E210IN885G0&fr=mcafee#id=0&iurl=https%3A%2F%2Fimg1.hscicdn.com%2Fimage%2Fupload%2Ff_auto%2Ct_ds_w_1200%2Flsci%2Fdb%2FPICTURES%2FCMS%2F348100%2F348106.jpg&action=click"</li>
+            <li><img width="200px" id="kohli7" src="https://in.images.search.yahoo.com/search/images;_ylt=AwrKA3kZW0xoGQIA0a.7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3BpdnM-?p=kohli&fr2=piv-web&type=E210IN885G0&fr=mcafee#id=0&iurl=https%3A%2F%2Fimg1.hscicdn.com%2Fimage%2Fupload%2Ff_auto%2Ct_ds_w_1200%2Flsci%2Fdb%2FPICTURES%2FCMS%2F348100%2F348106.jpg&action=click"</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
+<script>
+    //   document.getElementById('kohli').oneclick=function(){
+    //     alert("owl clicked")
+    //   } 
+
+    document.getElementById('kohli').addEventListener('click',function(e){ 
+        console.log("clicked inside the ul");
+        e.stopPropagation()
+         },false)//when clicked on kohli
+    document.getElementById('images').addEventListener('click',function(e){
+         alert("kohli clicked") 
+         e.preventDefault();
+         },false)//when clicked on images
+      //default false)
+      //type,timestamp,defaultPrevented
+      //target,toElement,srcElement,currentTarget
+      //clientX,clientY,screenX,ScreenY
+      //altkey,ctrlkey,keycode,shiftkey
+
+      //event propagation----->>>>>> inner element to outer element
+
+
+
+
+
+
+
+      document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e,target.tagname);
+        if(e,target,tagname=='img'){
+        let removeIt=e.target.parentNode
+        removeIt.remove()//it will remove the wholu ul then il therefor after that we have added if loop to  target the target name
+        }
+      })
+     
+</script>
