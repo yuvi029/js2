@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: brown;">
+    <ul>
+        <li><b>PROMISES</b>A Promise in JavaScript represents the eventual completion (or failure) of an asynchronous operation, and lets you write cleaner, more readable async code.</li>
+       <li> two states resolve state and reject state  </li>
+    </ul>
+    
+</body>
+</html>
+<script>
+    
+    let firstpromise = new Promise((resolve, reject) => {
+    function saymyname() {
+        console.log("my name is UB"); 
+    }
+
+    setTimeout(saymyname, 10000); // runs after 10 seconds
+    resolve(1000); // immediately resolves the promise
+});
+//promise-------------------->fulfilled-------------------------------->then
+    let promise1= new Promise((resolve,reject)=>{
+        let success=true;
+        if(success){
+            resolve("promise done")
+        }
+        else{
+            reject("promise reject")
+        }
+    });
+        promise1.then((message)=>{
+            console.log("the ka message is "+ message);
+            
+        }).catch((error)=>{
+            console.log("error"+error);
+        }) 
+
+
+        //***********************************************
+        let promise2=new Promise((resolve, reject)=>{
+            setTimeout(resolve,1000,"first")
+        })
+        let promise3=new Promise((resolve, reject)=>{
+            setTimeout(resolve,1000,"second")
+        })
+        let promise4=new Promise((resolve, reject)=>{
+            setTimeout(resolve,1000,"third")
+        })
+        let promise6=new Promise((resolve, reject)=>{
+            setTimeout(resolve,1000,"sixth")
+        })
+        Promise.all([promise2,promise3,promise4,promise6])
+        //executed when all promises are fulfilled
+        .then((values)=>{
+            console.log(values);
+        })
+        .catch((error)=>{
+            console.error("error:")+error;
+            
+        })
+</script>
