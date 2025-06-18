@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: blue;">
+    <p>XMLHttpRequest (XHR) is a JavaScript object used to interact with servers — it allows you to send HTTP requests and receive data without reloading the web page.</p>
+     <p>readyState	State Name	Description
+	<ul>
+    <li><b>UNSENT</b>	The XMLHttpRequest object is created, but the open() method hasn’t been called yet.</li>
+	<li><b>OPENED</b>	The open() method has been called — the request is set up but not sent.</li>
+	<li><b>HEADERS_RECEIVED</b>	send() has been called, and the response headers have been received.</li>
+	<li><b>LOADING</b>	The response body is being received (data is being downloaded).</li>
+     <li><b>DONE</b>	The operation is complete. You can now access responseText, status, etc.</p> </li>
+     <li>GET	Fetch data
+POST	Send new data
+PUT	Update data
+DELETE	Remove data</li>
+
+ </ul>
+ <ul>
+    <li><b>V8 ENGINE</b>The V8 engine is Google’s open-source JavaScript engine used to execute JavaScript code.
+
+It was originally built for Google Chrome, but now powers other platforms too — like Node.js.</li>
+ </ul>
+</body>
+</html>
+<script>
+    //api :- n API (Application Programming Interface) is a set of rules and protocols that 
+    // allows different software applications to communicate with each other.
+    //json formatter
+  const xhr= new XMLHttpRequest();
+  const requesturl='https://github.com/yuvi029'
+ xhr.open('GET',requesturl)
+ xhr.onreadystatechange=function(){
+   console.log(xhr.readyState);
+   if(xhr.readystate===4){
+    const data=JSON.parse(this.responseText)
+    console.log(data);
+    console.log(data.followers);
+   }
+ }
+  //console.log("here"); 
+  
+  xhr.send()
+
+</script>
